@@ -8,7 +8,6 @@ import { RecipieService } from '../recipie.service';
   styleUrls: ['./recipies-list.component.css']
 })
 export class RecipiesListComponent implements OnInit {
-  @Output() recipeWasSelected = new EventEmitter<Recipie>();
   recipies: Recipie[];
   
   constructor(private recipieService : RecipieService) { }
@@ -17,7 +16,4 @@ export class RecipiesListComponent implements OnInit {
     this.recipies = this.recipieService.getRecipies();
   }
 
-  onRecipeSelected(recipe: Recipie){
-    this.recipeWasSelected.emit(recipe); 
-  }
 }
