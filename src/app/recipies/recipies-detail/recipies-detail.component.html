@@ -13,7 +13,7 @@
     <div class="btn-group" appDropdown>
       <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipie <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li> <a href="#"> To Shopping List </a></li>
+        <li> <a href="#" (click)="onAddToShoppingList()"> To Shopping List </a></li>
         <li> <a href="#"> Edit Recipie </a></li>
         <li> <a href="#"> Delete Recipie </a></li>  
       </ul>
@@ -28,6 +28,8 @@
 
 <div class="row">
     <div class="col-xs-12">
-       Ingreidants
+       <ul class="list-group">
+        <li list-group-item *ngFor="let ingrediant of recipie.ingrediants">{{ingrediant.name}} ({{ingrediant.amount}})</li>
+       </ul>
     </div>
   </div>
